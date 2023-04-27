@@ -15,9 +15,15 @@ def calcula_posicoes_atq(pos_rainha):
 
     n = 0
     for linha in posicoes_atq:
-        linha[n] = 1
+
+        if(n+pos_rainha[0]-3 < 7):
+            linha[n+pos_rainha[0]-3] = 1
+            
+        # diagonal /
+        #if(6-n-pos_rainha[1] > 0):
+            #linha[6-n-pos_rainha[1]] = 1
+
         n = n + 1
-        linha[7-n] = 1
 
     posicoes_atq[pos_rainha[0]][pos_rainha[1]] = 2
     printa_tabuleiro(posicoes_atq)
